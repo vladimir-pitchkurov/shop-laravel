@@ -17,7 +17,7 @@ Route::get('/', ['as' => 'homepage', function () {
 }]);
 
 
-Route::resource('rest-pages', 'RestCtrl');
+/*Route::resource('rest-pages', 'RestCtrl');*/
 
 
 Route::get('first-ctrl', [ 'as' => 'first', 'uses' => 'FirstController@show']);
@@ -26,7 +26,7 @@ Route::get('first-ctrl', [ 'as' => 'first', 'uses' => 'FirstController@show']);
 
 
 
-Route::group(['prefix' => 'admin'], function (){
+/*Route::group(['prefix' => 'admin'], function (){
 
     Route::get('page/add', function (){
         $routea = Route::current();
@@ -62,13 +62,15 @@ Route::get('/page1', function () {
     echo '<br>route(\'homepage\') = '.route('homepage');
     echo '<pre>';
     /*print_r($_ENV);*/
-    echo config('app.locale');
+    /*echo config('app.locale');
     echo '<br>'.Config::get('app.locale');
     echo '<br>'.env('APP_KEY');
     echo '</pre>';
     return ;
-});
+});*/
 
 Route::get('/shop', function () {
     return view('shop.index-shop');
 });
+
+Route::get('/shop2', ['uses' => 'FirstController@show']);
